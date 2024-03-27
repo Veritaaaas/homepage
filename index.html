@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>RJM</h1>
+        </div>
+        <nav>
+            <button>Home</button>
+            <button>About</button>
+            <button>Projects</button>
+            <button>Contact</button>
+        </nav>
+    </header>
+    <div class="hero-page">
+        <div class="hero-text">
+            <h1>Hi there!</h1>
+            <h1>My name is <span style="color: #6B6BF6">Rodney James,</span></h1>
+            <h1 class="job-title"></h1>
+        </div>
+        <div class="hero-image">
+            <img src="computer_man.png" alt="computer image">
+        </div>
+    </div>
+    <script>
+        const titles = ["Computer Science Student", "Aspiring Software Engineer"];
+        let index = 0;
+        let subIndex = 0;
+        let currentTitle = "";
+        let isBackspacing = false;
+
+        const titleElement = document.querySelector('.job-title');
+
+        const type = () => {
+        const typingSpeed = 5000 / (titles[index].length * 2 + 20); // Adjust this value
+        const backspacingSpeed = typingSpeed;
+
+        if (isBackspacing && subIndex > 0) {
+            subIndex--;
+            currentTitle = currentTitle.substring(0, subIndex);
+        } else if (!isBackspacing && subIndex < titles[index].length) {
+            currentTitle += titles[index].charAt(subIndex);
+            subIndex++;
+        }
+
+        titleElement.textContent = currentTitle;
+
+        if (!isBackspacing && subIndex === titles[index].length) {
+            setTimeout(() => isBackspacing = true, 20 * typingSpeed); // Adjust this value
+        } else if (isBackspacing && subIndex === 0) {
+            isBackspacing = false;
+            index = index < titles.length - 1 ? index + 1 : 0;
+        }
+
+        setTimeout(type, isBackspacing ? backspacingSpeed : typingSpeed);
+        };
+
+        type();
+    </script>
+</body>
+</html>

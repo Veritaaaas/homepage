@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #010922;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    align-items: center;
+    margin: 0;
+}
+
+.logo {
+    font-family: 'Audiowide', sans-serif;
+    color: #6B6BF6;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav button {
+    background-color: #010922;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.hero-page {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.hero-page h1 {
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.hero-text {
+    width: 100%;
+}
+  
+.job-title {
+    color: #6B6BF6;
+    font-family: 'Audiowide', sans-serif;
+    margin-top: 4rem !important;
+    height: 3rem;
+    font-size: 2rem !important;
+    width: max-content;
+    border-right: 2px solid #6B6BF6; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    overflow: hidden; /* Ensures the content is hidden until it's "typed" */
+    margin: 0 auto; /* Gives that typing effect */
+    animation: 
+    typing 4s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+.hero-image {
+    height: 35rem;
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 480px;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
