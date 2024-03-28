@@ -10,11 +10,17 @@ body, html {
 
 body {
     background-color: #010922;
+    color: white;
     padding-left: 5%;
     padding-right: 5%;
 }
 
 header {
+    background-color: #010922;
+    position: fixed;
+    max-height: fit-content;
+    top: 0;
+    width: calc(100% - 10%);
     display: grid;
     grid-template-columns: 4fr 4fr;
     align-items: center;
@@ -32,7 +38,7 @@ nav {
 }
 
 nav button {
-    background-color: #010922;
+    background-color: transparent;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -41,6 +47,7 @@ nav button {
 }
 
 .hero-page {
+    margin-top: 6rem;
     color: white;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -82,6 +89,41 @@ nav button {
 .hero-image img {
     width: 480px;
 }
+
+.section-divide {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+
+/* about page */
+.about-page {
+    padding-left: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.about-text h1 {
+    margin: 0;
+    font-family: 'Audiowide', sans-serif;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.about-image {
+    display: flex;
+    align-items: center;
+    padding-left: 7rem;
+}
+
+.about-image img {
+    width: 480px;
+}
+
 
 @keyframes typing {
     from { width: 0; }
