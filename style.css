@@ -25,6 +25,7 @@ header {
     grid-template-columns: 4fr 4fr;
     align-items: center;
     margin: 0;
+    z-index: 3;
 }
 
 .logo {
@@ -92,7 +93,7 @@ nav button {
 
 .section-divide {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 
@@ -164,6 +165,88 @@ nav button {
 
 .skill:hover {
     transform: translateY(-20px);
+}
+
+/* projects page */
+.projects-page h1 {
+    font-family: 'Audiowide', sans-serif;
+    margin-top: 1.5rem;   
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+}
+
+.project {
+    max-height: fit-content;
+    margin-top: 3rem;
+    background-color: #000e36;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0px 3px 3px 0px #8888ff;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-details h2 {
+    font-family: 'Audiowide', sans-serif;
+    color: #6B6BF6;
+}
+
+.project-description-bottom {
+    color: #c6c6ff;
+    font-style: italic;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.tech-used ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-used li {
+    margin-right: 1rem;
+}
+
+.project-links {
+    margin-top: 3rem;
+    display: flex;
+    align-items: bottom;
+    gap: 1rem;
+
+}
+
+.project-links i {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.project-image {
+    padding-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project img {
+    max-width: 550px;
+    height: auto;
+    border-radius: 20px;
 }
 
 
