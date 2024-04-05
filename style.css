@@ -38,6 +38,12 @@ nav {
     justify-content: flex-end;
 }
 
+.hamburger {
+    display: none; 
+    font-size: 24px;
+    cursor: pointer;
+}
+
 nav button {
     background-color: transparent;
     color: white;
@@ -46,6 +52,32 @@ nav button {
     margin: 10px;
     cursor: pointer;
 }
+
+nav button.nav-link {
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element doesn't extend outside the button */
+    /* Other styles for your buttons */
+}
+
+nav button.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Adjust the height as needed for your border */
+    background-color: #6B6BF6; /* Color of the border */
+    transition: width 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+nav button.nav-link.active::before {
+    width: 100%; /* This will animate the border to grow from left to right */
+}
+
+nav button.active {
+    border-bottom: 2px solid #6B6BF6;
+}
+
 
 .hero-page {
     margin-top: 6rem;
@@ -237,7 +269,6 @@ nav button {
 }
 
 .project-image {
-    padding-left: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,4 +325,30 @@ footer {
 
 @keyframes blink-caret {
     50% { border-color: transparent; }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+   
+    .hamburger {
+        display: block;
+    }
+
+    .nav-link {
+        display: none;
+        flex-direction: column;
+    }
+
+    .hero-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project img {
+        margin-top: 1rem;
+    }
 }

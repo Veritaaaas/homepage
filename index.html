@@ -12,30 +12,31 @@
             <h1>RJM</h1>
         </div>
         <nav>
-            <button>Home</button>
-            <button>About</button>
-            <button>Projects</button>
-            <button>Contact</button>
+            <button class="hamburger">&#9776;</button>
+            <button class="nav-link" data-id="Home">Home</button>
+            <button class="nav-link" data-id="About">About</button>
+            <button class="nav-link" data-id="Projects">Projects</button>
+            <button class="nav-link" data-id="Contact">Contact</button>
         </nav>
     </header>
 
     <!-- Hero -->
-    <div class="hero-page">
+    <section class="hero-page" id="Home">
         <div class="hero-text">
             <h1>Hi there!</h1>
             <h1>My name is <span style="color: #6B6BF6">Rodney James,</span></h1>
             <h1 class="job-title"></h1>
         </div>
         <div class="hero-image">
-            <img src="computer_man.png" alt="computer image">
+            <img src="../images/computer_man.png" alt="computer image">
         </div>
-    </div>
+    </section>
 
     <div class="section-divide"></div>
 
     <!-- About -->
     <div class="line"></div>
-    <section  class="about-page">
+    <section  class="about-page" id="About">
         <div class="about-text">
             <h1>Who <span style="color: #6B6BF6;">Am I</span></h1>
             <p>
@@ -80,7 +81,7 @@
 
     <!-- Projects -->
     <div class="line"></div>
-    <section class="projects-page">
+    <section class="projects-page" id="Projects">
         <h1>Recent <span style="color: #6B6BF6;">Works</span></h1>
         <div class="projects-list">
             <div class="project">
@@ -108,7 +109,7 @@
                     </div>
                 </div>
                 <div class="project-image">
-                    <img src="SalesForecasting.png" alt="project1">
+                    <img src="../images/SalesForecasting.png" alt="project1">
                 </div> 
             </div>
             <div class="project">
@@ -134,7 +135,7 @@
                     </div>
                 </div>
                 <div class="project-image">
-                    <img src="tic-tac-toe.png" alt="project1">
+                    <img src="../images/tic-tac-toe.png" alt="project1">
                 </div> 
             </div>
             <div class="project">
@@ -161,7 +162,7 @@
                     </div>
                 </div>
                 <div class="project-image">
-                    <img src="spotify.png" alt="project1">
+                    <img src="../images/spotify.png" alt="project1">
                 </div> 
             </div>
         </div>
@@ -171,7 +172,7 @@
 
     <!-- Contact -->
     <div class="line"></div>
-    <section class="contact-page">
+    <section class="contact-page" id="Contact">
         <div class="contact-details">
             <h1>Get in <span style="color: #6B6BF6;">Touch</span></h1>
             <p>Don't be shy. My inbox is always happen. I'll be happy to talk about coding, books, games or anything you can think of. Hit me up on the following platforms!</p>
@@ -187,47 +188,8 @@
     <footer>
         <p>&copy; 2024 Rodney James</p>
     </footer>
-</body>
 
-
-
-
-
-    <script>
-        const titles = ["Computer Science Student", "Aspiring Software Engineer"];
-        let index = 0;
-        let subIndex = 0;
-        let currentTitle = "";
-        let isBackspacing = false;
-
-        const titleElement = document.querySelector('.job-title');
-
-        const type = () => {
-        const typingSpeed = 5000 / (titles[index].length * 2 + 20); // Adjust this value
-        const backspacingSpeed = typingSpeed;
-
-        if (isBackspacing && subIndex > 0) {
-            subIndex--;
-            currentTitle = currentTitle.substring(0, subIndex);
-        } else if (!isBackspacing && subIndex < titles[index].length) {
-            currentTitle += titles[index].charAt(subIndex);
-            subIndex++;
-        }
-
-        titleElement.textContent = currentTitle;
-
-        if (!isBackspacing && subIndex === titles[index].length) {
-            setTimeout(() => isBackspacing = true, 20 * typingSpeed); // Adjust this value
-        } else if (isBackspacing && subIndex === 0) {
-            isBackspacing = false;
-            index = index < titles.length - 1 ? index + 1 : 0;
-        }
-
-        setTimeout(type, isBackspacing ? backspacingSpeed : typingSpeed);
-        };
-
-        type();
-    </script>
-    <script src="https://kit.fontawesome.com/6e2477efc3.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/6e2477efc3.js" crossorigin="anonymous"></script>
 </body>
 </html>
